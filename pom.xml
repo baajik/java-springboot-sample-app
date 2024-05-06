@@ -11,6 +11,16 @@
     <groupId>com.handson.training</groupId>
     <artifactId>jenkin-java-training</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <profiles>
+<profile>
+
+<id>skiptest</id>
+<properties>
+<maven.test.skip>true</maven.test.skip>
+</properties>
+
+</profile>
+</profiles>
     <name>webapp</name>
     <description>Demo Application for hands-on training </description>
 
