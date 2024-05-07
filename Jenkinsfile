@@ -48,10 +48,21 @@ stage('Request Input') {
      }
 
 stage('Creating Package') {
-steps {
-sh 'mvn package'
-}
-}
+	steps {
+		sh 'mvn package'
+	}
+	}
+
+stage('Deploying Application') {
+	steps {
+		script{
+			withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
+				sh 'nohup java -jar ./target/jenkin-java-training-0.0.1-SNAPSHOT.jar &'
+
+                   }
+              }
+         }
+   }
 }
 post {
 success {
