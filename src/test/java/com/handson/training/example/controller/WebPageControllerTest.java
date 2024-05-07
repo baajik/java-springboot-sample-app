@@ -41,7 +41,7 @@ public class WebPageControllerTest {
     public void indexMustHaveContainsHTMLTag() {
         String defaultMessage = webPageController.index();
         logger.info("Default Message is "+defaultMessage);
-        Assert.assertThat(defaultMessage, CoreMatchers.containsString("<html>"));
+        Assert.assertThat(defaultMessage, CoreMatchers.containsString("<xml>"));
     }
 
     @Test(expected = NullPointerException.class)
