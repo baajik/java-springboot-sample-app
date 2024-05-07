@@ -20,9 +20,9 @@ stage('Installing Java and Maven') {
 			}
 		}
 	}	
-stage('Third Stage'){
+stage('Download the java code'){
 	steps {
-		echo "Third Stage"
+	git branch: 'main', credentialsId: 'git-repo-creds', url: 'git@github.com:baajik/java-springboot-sample-app.git'
 	}
 	}
 }
